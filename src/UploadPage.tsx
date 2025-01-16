@@ -1,7 +1,7 @@
-import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import React, { useEffect, useState } from 'react';
-import { storage } from './firebase.ts';
+import React, { useState } from 'react';
+import { createClient } from '@supabase/supabase-js';
 import { useNavigate } from 'react-router-dom';
+import { supabase } from './supabase.ts'
 
 interface ImageUploadProps { }
 
@@ -35,7 +35,7 @@ const UploadPhoto: React.FC<ImageUploadProps> = () => {
         }
     };
 
-    const handleFolderPathChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleFolderPathChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setFolderPath(event.target.value);
     };
 
@@ -49,33 +49,47 @@ const UploadPhoto: React.FC<ImageUploadProps> = () => {
         setProgress(0); // Reset progress for multiple uploads
         setImageUrls([]); // Clear previous image URLs
 
+        const totalFiles = images.length;
+        let completedFiles = 0;
+
         const uploadPromises = images.map(async (image) => {
-            const storageRef = ref(storage, `${folderPath}/${image.name}`);
 
             try {
-                const uploadTask = uploadBytesResumable(storageRef, image);
 
-                uploadTask.on('state_changed',
-                    (snapshot) => {
-                        const progressPercent = Math.round(
-                            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                        );
-                        setProgress(progressPercent); // Update overall progress
-                    },
-                    (error) => {
-                        console.error('Error during upload:', error);
-                    },
-                    async () => {
-                        const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-                        setImageUrls((prevImageUrls) => [...prevImageUrls, downloadURL]);
-                    }
-                );
+                //create a unique file name
+                const fileExt = image.name.split('.').pop();
+                const fileName = `${Math.random()}.${fileExt}`;
+                const filePath = `${folderPath}/${fileName}`;
+
+                //upload file to supabase storage
+                const { data, error } = await supabase.storage
+                    .from('photos')
+                    .upload(filePath, image, {
+                        cacheControl: '3600',
+                        upsert: false
+                    });
+
+                if (error) {
+                    throw error;
+                }
+
+                //get public url for the uploaded file
+                const { publicURL } = supabase.storage.from('photos').getPublicUrl(filePath).data;
+
+                if (publicURL) {
+                    setImageUrls(prev => [...prev, publicURL])
+                }
+
+                completedFiles++;
+                setProgress(Math.round((completedFiles / totalFiles) * 100));
+
             } catch (error) {
                 console.error('Error during upload', error);
+                alert('Failed to upload some files. Please try again.');
             }
         });
-
-        await Promise.all(uploadPromises); // Wait for all uploads to finish
+        await Promise.all(uploadPromises);
+        alert('Upload Success!')
     };
 
     return (

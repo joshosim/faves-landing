@@ -1,20 +1,15 @@
-
-import { storage } from '../firebase.ts'
-import { getDownloadURL, listAll, ref } from 'firebase/storage'
 import React, { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
-
+import { supabase } from '../supabase.ts'
 
 function Products() {
 
     const productRef = useRef<HTMLDivElement>(null)
-
-    const [selected, setSelected] = useState('Tees')
+    const [selected, setSelected] = useState('tees')
     const [images, setImages] = useState<string[]>([]);
 
     const handleClick = (item: string) => {
-        setSelected(item)
-
+        setSelected(item.toLocaleLowerCase().replace('-', ''))
     }
 
     const Categories = [
@@ -26,22 +21,31 @@ function Products() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const listRef = ref(storage, `${selected}/`);
 
-                const res = await listAll(listRef);
+                const { data: files, error } = await supabase
+                    .storage
+                    .from('photos')
+                    .list(selected, {
+                        limit: 100,
+                        offset: 0,
+                        sortBy: { column: 'name', order: 'asc' }
+                    })
 
+                if (error) {
+                    throw error;
+                }
 
-                const imagePromises = res.items.map(async (itemRef) => {
-                    const url = await getDownloadURL(itemRef);
-                    return url
-                })
-
-
-                const imageUrls = await Promise.all(imagePromises)
-
-
-                setImages(imageUrls)
-                console.log(imageUrls, 'req')
+                if (files) {
+                    //get public url for all files
+                    const imageUrls = files.map((file) => {
+                        const { publicURL } = supabase
+                            .storage
+                            .from('photos')
+                            .getPublicUrl(`${selected}/${file.name}`)
+                        return publicURL;
+                    })
+                    setImages(imageUrls)
+                }
 
             } catch (error) {
                 console.error('Error fetching images:', error)
@@ -73,11 +77,11 @@ function Products() {
                         <div key={index}>
                             <div
                                 className={twMerge('bg-transparent px-5 py-2 border border-black rounded-lg cursor-pointer',
-                                    selected === item && 'bg-black')}
+                                    selected === item.toLocaleLowerCase().replace('-', '') && 'bg-black')}
 
                                 onClick={() => handleClick(item)}>
                                 <p className={twMerge('text-sm md:text-base whitespace-nowrap text-black',
-                                    selected === item && 'text-white')}>{item}</p>
+                                    selected === item.toLocaleLowerCase().replace('-', '') && 'text-white')}>{item}</p>
                             </div>
                         </div>
                     ))}
