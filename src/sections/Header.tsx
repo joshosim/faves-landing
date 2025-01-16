@@ -27,7 +27,7 @@ export const Header = () => {
 
 
   return (
-    <header className={`sticky top-0 ${isOpen ? '' : 'backdrop-blur-sm'} z-20`}>
+    <header className={`sticky top-0 ${isOpen ? '' : 'backdrop-blur-sm'} z-20 overflow-x-hidden`}>
       <div className="flex justify-center items-center py-3 gap-3 bg-black text-white text-sm">
         <p className='text-white/60 hidden md:block'>
           Find your perfect outfit faster. Shop now and simplify your wardrobe
