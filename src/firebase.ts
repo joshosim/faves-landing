@@ -5,12 +5,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDlkFeeevdtDI51I20JMPymJ6RXSzojjuE",
-    authDomain: "landing-saas-cced7.firebaseapp.com",
-    projectId: "landing-saas-cced7",
-    storageBucket: "landing-saas-cced7.firebasestorage.app",
-    messagingSenderId: "665034852983",
-    appId: "1:665034852983:web:c5b4452f66e56d8e379472"
+    apiKey: "AIzaSyBLYBaKfu-gBYJe2Pi1o4qdfaRnNaRlpUU",
+    authDomain: "faves-landing.firebaseapp.com",
+    projectId: "faves-landing",
+    storageBucket: "faves-landing.firebasestorage.app",
+    messagingSenderId: "830693430014",
+    appId: "1:830693430014:web:9e4b0f7f3e5725ed9a4baf"
 };
 
 export const app = initializeApp(firebaseConfig);

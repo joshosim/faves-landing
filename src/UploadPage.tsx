@@ -129,7 +129,7 @@ const UploadPhoto: React.FC<ImageUploadProps> = () => {
                             <li key={index}>
                                 <img
                                     src={imageUrl}
-                                    alt={`Image ${index + 1}`}
+                                    alt={`Pic${index + 1}`}
                                     style={{ maxWidth: '200px' }}
                                     height={200}
                                     width={200}

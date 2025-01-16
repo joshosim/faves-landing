@@ -6,9 +6,9 @@ import noddleImage from '../assets/noodle.png'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 export const Hero = () => {
-  const heroRef = useRef(null)
+  const homeRef = useRef(null)
   const { scrollYProgress } = useScroll({
-    target: heroRef,
+    target: homeRef,
     offset: ['start end', 'end start']
   });
 
@@ -17,7 +17,7 @@ export const Hero = () => {
   return (
     <section
       id='home'
-      ref={heroRef}
+      ref={homeRef}
       className='pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip scroll-mt-32'>
       <div className="container">
         <div className='md:flex items-center'>

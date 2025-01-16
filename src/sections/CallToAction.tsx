@@ -6,17 +6,17 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react';
 
 export const CallToAction = () => {
-  const sectionRef = useRef(null)
+  const updateRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
+    target: updateRef,
     offset: ['start end', 'end start']
   })
 
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150])
 
   return (
-    <section id='updates' ref={sectionRef} className="scroll-mt-32 bg-gradient-to-b from-white to-[#d2dcff] py-24 overflow-x-clip">
+    <section id='updates' ref={updateRef} className="scroll-mt-32 bg-gradient-to-b from-white to-[#d2dcff] py-24 overflow-x-clip">
       <div className="container">
         <div className="section-heading relative">
           <h2 className="section-title">Contact Favvy's Apparrel today</h2>

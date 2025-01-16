@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { CallToAction } from "../src/sections/CallToAction.tsx";
 import { Footer } from "../src/sections/Footer.tsx";
 import { Header } from "../src/sections/Header.tsx";
@@ -10,9 +10,12 @@ import { ProductShowcase } from "../src/sections/ProductShowcase.tsx";
 import { Testimonials } from "../src/sections/Testimonials.tsx";
 
 export default function Home() {
+
     return (
         <>
-            <Header />
+            <Header
+
+            />
             <Hero />
             <LogoTicker />
             <ProductShowcase />

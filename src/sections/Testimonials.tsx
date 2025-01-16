@@ -10,7 +10,7 @@ import avatar8 from "../assets/avatar-8.png";
 import avatar9 from "../assets/avatar-9.png";
 
 import { motion } from 'framer-motion'
-import React from "react";
+import React, { useRef } from "react";
 
 const testimonials = [
   {
@@ -122,8 +122,10 @@ const TestimonialsColumn = (props: {
 }
 
 export const Testimonials = () => {
+
+  const customerRef = useRef<HTMLDivElement>(null)
   return (
-    <section id='customers' className="bg-white scroll-mt-32">
+    <section id='customers' ref={customerRef} className="bg-white scroll-mt-32">
       <div className="container">
         <div className="section-heading">
           <div className="flex justify-center">

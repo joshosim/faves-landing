@@ -1,11 +1,13 @@
 
 import { storage } from '../firebase.ts'
 import { getDownloadURL, listAll, ref } from 'firebase/storage'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 
 function Products() {
+
+    const productRef = useRef<HTMLDivElement>(null)
 
     const [selected, setSelected] = useState('Tees')
     const [images, setImages] = useState<string[]>([]);
@@ -54,6 +56,7 @@ function Products() {
     return (
         <section
             id="products"
+            ref={productRef}
             className='scroll-mt-32'
         >
             <div className="container">

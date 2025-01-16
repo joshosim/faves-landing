@@ -7,16 +7,17 @@ import { useRef } from "react";
 
 export const ProductShowcase = () => {
 
-  const productRef = useRef(null)
+
+  const aboutRef = useRef(null)
   const { scrollYProgress } = useScroll({
-    target: productRef,
+    target: aboutRef,
     offset: ['start end', 'end start']
   })
 
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150])
 
   return (
-    <section id='about' ref={productRef}
+    <section id='about' ref={aboutRef}
       className="scroll-mt-28 bg-gradient-to-b from=[#FFF] to-[#D2DCFF] py-24 overflow-x-clip">
       <div className="container">
         <div className="section-heading">
