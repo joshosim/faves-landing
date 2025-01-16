@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { CallToAction } from "../src/sections/CallToAction.tsx";
 import { Footer } from "../src/sections/Footer.tsx";
 import { Header } from "../src/sections/Header.tsx";
