@@ -79,7 +79,7 @@ const TestimonialsColumn = (props: {
   duration?: number
 }) => {
   return (
-    <div className={props.className} id="customers">
+    <div className={props.className}>
       <motion.div
         animate={{
           translateY: '-50%'
@@ -123,7 +123,7 @@ const TestimonialsColumn = (props: {
 
 export const Testimonials = () => {
   return (
-    <section className="bg-white">
+    <section id='customers' className="bg-white scroll-mt-32">
       <div className="container">
         <div className="section-heading">
           <div className="flex justify-center">

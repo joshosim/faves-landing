@@ -15,7 +15,10 @@ export const Hero = () => {
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
 
   return (
-    <section ref={heroRef} className='pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip'>
+    <section
+      id='home'
+      ref={heroRef}
+      className='pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip scroll-mt-32'>
       <div className="container">
         <div className='md:flex items-center'>
           <div className='md:w-[478px]'>

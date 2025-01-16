@@ -52,7 +52,10 @@ function Products() {
 
 
     return (
-        <section >
+        <section
+            id="products"
+            className='scroll-mt-32'
+        >
             <div className="container">
                 <div className="section-heading">
                     <div className="flex justify-center">

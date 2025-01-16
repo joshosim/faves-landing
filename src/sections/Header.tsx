@@ -7,9 +7,11 @@ export const Header = () => {
   return (
     <header className='sticky top-0 backdrop-blur-sm z-20'>
       <div className="flex justify-center items-center py-3 gap-3 bg-black text-white text-sm">
-        <p className='text-white/60 hidden md:block'>Streamline your work flow and boost your productivity</p>
+        <p className='text-white/60 hidden md:block'>
+          Find your perfect outfit faster. Shop now and simplify your wardrobe
+        </p>
         <div className='inline-flex gap-1 items-center'>
-          <p>Get Started for free</p>
+          <p>Get in Touch</p>
           {/* <ArrowRight className='h-4 w-4 inline-flex justify-center items-center' /> */}
           <svg
             className='h-4 w-4 inline-flex justify-center items-center'
@@ -28,12 +30,12 @@ export const Header = () => {
             </svg>
 
             <nav className='hidden md:flex gap-6 text-black/60 items-center'>
+              <a href="#home">Home</a>
               <a href="#about">About</a>
-              <a href="#features">Features</a>
               <a href="#customers">Customers</a>
+              <a href="#products">Our Products</a>
               <a href="#updates">Updates</a>
-              <a href="#help">Help</a>
-              <button className='bg-black text-white px-4 py-2 rounded-lg font-medium inline-flex align-items justify-center tracking-tight'>Get for free</button>
+              {/* <button className='bg-black text-white px-4 py-2 rounded-lg font-medium inline-flex align-items justify-center tracking-tight'>Get for free</button> */}
             </nav>
           </div>
         </div>
