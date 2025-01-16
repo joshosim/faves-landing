@@ -32,7 +32,8 @@ export const Footer = () => {
         </p>
         <p className='mt-3 text-[0.65rem]'>
           Website built with React + Framer Motion by
-          <a className='text-red-500 underline' href='https://osimuka.vercel.app'>  Osim Uka</a>
+          <a className='text-red-500 underline'
+            target='_blank' href='https://osimuka.vercel.app'>  Osim Uka</a>
         </p>
       </div>
     </div>
