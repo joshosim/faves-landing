@@ -14,12 +14,12 @@ export const Footer = () => {
             className='relative'
           />
         </div>
-        <nav className='flex flex-col md:flex-row md:justify-center gap-6 mt-6'>
+        {/* <nav className='flex flex-col md:flex-row md:justify-center gap-6 mt-6'>
           <a href="#about">About</a>
           <a href="#features">Features</a>
           <a href="#customers">Customers</a>
           <a href="#help">Help</a>
-        </nav>
+        </nav> */}
         <div className='flex justify-center gap-6 mt-6'>
           <div className='cursor-pointer' onClick={
             () => window.open('https://www.tiktok.com/@favvy_golden')}
@@ -29,6 +29,10 @@ export const Footer = () => {
         </div>
         <p className='mt-6'>
           &copy; 2025 Favvy's Apparrel. All rights reserved.
+        </p>
+        <p className='mt-3 text-[0.65rem]'>
+          Website built with React + Framer Motion by
+          <a className='text-red-500 underline' href='https://osimuka.vercel.app'>  Osim Uka</a>
         </p>
       </div>
     </div>
