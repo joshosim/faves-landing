@@ -61,7 +61,7 @@ const UploadPhoto: React.FC<ImageUploadProps> = () => {
                 const filePath = `${folderPath}/${fileName}`;
 
                 //upload file to supabase storage
-                const { error } = await supabase.storage
+                const { data, error } = await supabase.storage
                     .from('photos')
                     .upload(filePath, image, {
                         cacheControl: '3600',
@@ -88,7 +88,8 @@ const UploadPhoto: React.FC<ImageUploadProps> = () => {
             }
         });
         await Promise.all(uploadPromises);
-        alert('Upload Success!')
+
+
     };
 
     return (
