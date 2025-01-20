@@ -13,7 +13,7 @@ function Products() {
     }
 
     const Categories = [
-        'Tees', 'T-Shirt', 'Plain Trouser', 'Jeans',
+        'Tees', 'TShirt', 'Plain Trouser', 'Jeans',
         'Unisex', 'Pam', 'Sneakers',
         'Luxury Shoes', 'Male Shorts', 'Hoddy', 'Necklace', 'Cap', 'EarRings'
     ]
