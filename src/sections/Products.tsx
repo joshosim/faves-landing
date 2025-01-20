@@ -22,7 +22,7 @@ function Products() {
         const fetchImages = async () => {
             try {
 
-                const { data: files, error } = await supabase
+                const { data, error } = await supabase
                     .storage
                     .from('photos')
                     .list(selected, {
@@ -33,19 +33,26 @@ function Products() {
 
                 if (error) {
                     throw error;
+
                 }
 
-                if (files) {
-                    //get public url for all files
-                    const imageUrls = files.map((file) => {
-                        const { publicURL } = supabase
+                console.log('data from the storage', data)
+
+                if (data) {
+                    //get public url for all data
+                    const imageUrls = data.map((file) => {
+                        const { data: files } = supabase
                             .storage
                             .from('photos')
                             .getPublicUrl(`${selected}/${file.name}`)
-                        return publicURL;
+                        return files.publicUrl;
+
                     })
+
                     setImages(imageUrls)
                 }
+
+
 
             } catch (error) {
                 console.error('Error fetching images:', error)
@@ -55,7 +62,6 @@ function Products() {
         fetchImages()
 
     }, [selected])
-
 
     return (
         <section
@@ -86,19 +92,28 @@ function Products() {
                         </div>
                     ))}
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 my-12 h-[400px] overflow-y-scroll hide-scrollbar'>
-                    {images
-                        // .filter((item) => item.category === selected)
-                        .map((item, index) => (
-                            <img
-                                key={index}
-                                src={item}
-                                alt={item}
-                                width={400}
-                                height={300}
-                                className='h-[300px] w-[400px] object-cover rounded-lg' />
-                        ))}
-                </div>
+                {
+                    images.length > 0 ?
+                        (<div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 my-12 h-[400px] overflow-y-scroll hide-scrollbar'>
+                            {images
+
+                                .map((item, index) => {
+
+                                    return (
+                                        <img
+                                            key={index}
+                                            src={item}
+                                            alt={item}
+                                            width={400}
+                                            height={300}
+                                            className='h-[300px] w-[400px] object-cover rounded-lg' />
+                                    )
+                                })}
+                        </div>) : (
+                            <div className='grid gap-4 my-12 h-[400px] overflow-y-scroll hide-scrollbar'>
+                                <p className='flex items-center justify-center'>No Images Available for {selected}</p>
+                            </div>
+                        )}
 
             </div>
         </section>
