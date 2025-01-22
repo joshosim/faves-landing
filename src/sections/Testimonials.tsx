@@ -1,71 +1,65 @@
 
-import avatar1 from "../assets/avatar-1.png";
-import avatar2 from "../assets/avatar-2.png";
-import avatar3 from "../assets/avatar-3.png";
-import avatar4 from "../assets/avatar-4.png";
-import avatar5 from "../assets/avatar-5.png";
-import avatar6 from "../assets/avatar-6.png";
-import avatar7 from "../assets/avatar-7.png";
-import avatar8 from "../assets/avatar-8.png";
-import avatar9 from "../assets/avatar-9.png";
+import goodness from "../assets/goodness.jpg";
+import avatar from "../assets/avatar.png";
+
 
 import { motion } from 'framer-motion'
 import React, { useRef } from "react";
 
 const testimonials = [
   {
-    text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
-    imageSrc: avatar1,
-    name: "Osim Uka",
-    username: "osimuka14@gmail.com",
+    text: "I got my package, thank you sooo much. He loved the fit! 😫❤❤❤",
+    imageSrc: goodness,
+    name: "Goodness Asuquo",
+    username: "asogoodness@gmail.com",
   },
   {
-    text: "Our team's productivity has skyrocketed since we started using this tool. ",
-    imageSrc: avatar2,
-    name: "Josh Smith",
-    username: "@jjsmith",
+    text: "The outfit I got is amazing! Everyone at the wedding kept asking where I got it from. Thank you, Favvy! 🥰",
+    imageSrc: avatar,
+    name: "Chioma Nwachukwu",
+    username: "@chiomastyles",
   },
   {
-    text: "This app has completely transformed how I manage my projects and deadlines.",
-    imageSrc: avatar3,
-    name: "Morgan Lee",
-    username: "@morganleewhiz",
+    text: "I’m so happy with my new sneakers. They’re comfy, stylish, and go with everything. You’re the best, Favvy!",
+    imageSrc: avatar,
+    name: "Uduak Ekong",
+    username: "@uduakstyles",
   },
   {
-    text: "I was amazed at how quickly we were able to integrate this app into our workflow.",
-    imageSrc: avatar4,
-    name: "Casey Jordan",
-    username: "@caseyj",
+    text: "My husband loved the tees I bought from you. They’re such good quality! Thanks a lot!",
+    imageSrc: avatar,
+    name: "Ayo",
+    username: "@adebayobuyz",
   },
   {
-    text: "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.",
-    imageSrc: avatar5,
-    name: "Taylor Kim",
-    username: "@taylorkimm",
+    text: "The shoes are perfect, just like you promised. I can’t wait to shop again! 💃",
+    imageSrc: avatar,
+    name: "Tari James",
+    username: "@tarijames",
   },
   {
-    text: "The customizability and integration capabilities of this app are top-notch.",
-    imageSrc: avatar6,
-    name: "Riley Smith",
-    username: "@rileysmith1",
+    text: "Everything about the plain trousers is perfect – the fabric, the fit, the style! Thanks so much!",
+    imageSrc: avatar,
+    name: "Osinachi Eze",
+    username: "@osinachieze",
   },
   {
-    text: "Adopting this app for our team has streamlined our project management and improved communication across the board.",
-    imageSrc: avatar7,
-    name: "Jordan Patels",
-    username: "@jpatelsdesign",
+    text: "The necklace I got is stunning. I’ve been getting so many compliments. Favvy, you rock! ✨",
+    imageSrc: avatar,
+    name: "Christaina Oviezibe",
+    username: "@oviechris",
   },
   {
-    text: "With this app, we can easily assign tasks, track progress, and manage documents all in one place.",
-    imageSrc: avatar8,
-    name: "Sam Dawson",
-    username: "@dawsontechtips",
+    text: "The unisex hoodie is fire! My siblings are all trying to grab it from me. Thanks, Favvy!",
+    imageSrc: avatar,
+    name: "Boma Braide",
+    username: "@bomaswag",
   },
   {
-    text: "Its user-friendly interface and robust features support our diverse needs.",
-    imageSrc: avatar9,
-    name: "Casey Harper",
-    username: "@casey09",
+    text: "Thanks, Favvy, for the quick delivery! The cap is super stylish and exactly what I needed for my trip.",
+    imageSrc: avatar,
+    name: "Nkoyo Udoh",
+    username: "@nkoyotrends",
   },
 ];
 
