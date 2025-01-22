@@ -13,9 +13,9 @@ function Products() {
     }
 
     const Categories = [
-        'Tees', 'Tshirts', 'Plain Trouser', 'Jeans',
+        'Tees', 'Tshirts', 'PlainTrouser', 'Jeans',
         'Unisex', 'Pam', 'Sneakers',
-        'Luxury Shoes', 'Male Shorts', 'Hoddy', 'Necklace', 'Cap', 'EarRings'
+        'LuxuryShoes', 'MaleShorts', 'Hoddy', 'Necklace', 'Cap', 'EarRings'
     ]
 
     useEffect(() => {
