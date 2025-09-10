@@ -35,13 +35,13 @@ export const Hero = () => {
                   repeatType: 'loop'
                 }}
                 className='bg-[linear-gradient(to_right,#DD7DDF,#e1cd86,#bbcb92,#71c2ef,#3bffff,#DD7DDF,#e1cd86,#bbcb92,#71c2ef,#3bffff,#DD7DDF)] [background-size:200%] text-transparent bg-clip-text font-medium'>
-                Favvy&apos;s Apparel
+                Victorific
               </motion.span>
 
             </h1>
             <p className="text-xl text-[#010D3E] tracking-tight mt-6">
-              Experience the Art of Fashion with Favvy&apos;s Apparels - Your Premier Destination for
-              Style, Comfort, and Elegance.
+              Hi 👋, I'm Victor Osim, and you might know me as Victorific Osim online and on social media.
+              Welcome to my wall. Keep scrolling to know more about me. I'd love to connect with you.
             </p>
             <div className="flex gap-1 items-center mt-[30px]">
               <button className="btn btn-primary cursor-default">Get in Touch</button>

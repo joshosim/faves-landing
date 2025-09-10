@@ -1,67 +1,34 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
-import { supabase } from '../supabase.ts'
 
 function Products() {
 
     const productRef = useRef<HTMLDivElement>(null)
-    const [selected, setSelected] = useState('tees')
-    const [images, setImages] = useState<string[]>([]);
+    const [selected, setSelected] = useState('Confectioneries/fresh food'.toLocaleLowerCase().replace('-', ''))
 
     const handleClick = (item: string) => {
         setSelected(item.toLocaleLowerCase().replace('-', ''))
     }
 
-    const Categories = [
-        'Tees', 'Tshirts', 'PlainTrouser', 'Jeans',
-        'Unisex', 'Pam', 'Sneakers',
-        'LuxuryShoes', 'MaleShorts', 'Hoddy', 'Necklace', 'Cap', 'EarRings'
-    ]
-
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-
-                const { data, error } = await supabase
-                    .storage
-                    .from('photos')
-                    .list(selected, {
-                        limit: 100,
-                        offset: 0,
-                        sortBy: { column: 'name', order: 'asc' }
-                    })
-
-                if (error) {
-                    throw error;
-
-                }
-
-                console.log('data from the storage', data)
-
-                if (data) {
-                    //get public url for all data
-                    const imageUrls = data.map((file) => {
-                        const { data: files } = supabase
-                            .storage
-                            .from('photos')
-                            .getPublicUrl(`${selected}/${file.name}`)
-                        return files.publicUrl;
-
-                    })
-
-                    setImages(imageUrls)
-                }
-
-
-
-            } catch (error) {
-                console.error('Error fetching images:', error)
-            }
-        }
-
-        fetchImages()
-
-    }, [selected])
+    const Categories: string[] = [
+        "Confectioneries/fresh food",
+        "Graphics Design",
+        "Web design",
+        "Video Editing",
+        "Event Planning/Giftings",
+        "Art Work (Portraits)",
+        "Nighties and Undies",
+        "Beddings and Duvets",
+        "Model",
+        "Health and beauty stuffs",
+        "Perfumes",
+        "Jewelries",
+        "Shirts, Trousers and Hoodies",
+        "Bags (female and Male)",
+        "Foot wears",
+        "Phones, Laptops and Powerbanks",
+        "HouseHold Utensils"
+    ];
 
     return (
         <section
@@ -78,7 +45,7 @@ function Products() {
                         Boost your confidence with out products
                     </h2>
                 </div>
-                <div className='flex gap-4 items-center overflow-x-scroll scroll-smooth hide-scrollbar mt-12'>
+                <div className='flex gap-4 items-center justify-center flex-wrap mt-12'>
                     {Categories.map((item, index) => (
                         <div key={index}>
                             <div
@@ -92,29 +59,6 @@ function Products() {
                         </div>
                     ))}
                 </div>
-                {
-                    images.length > 0 ?
-                        (<div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 my-12 h-[400px] overflow-y-scroll hide-scrollbar'>
-                            {images
-
-                                .map((item, index) => {
-
-                                    return (
-                                        <img
-                                            key={index}
-                                            src={item}
-                                            alt={item}
-                                            width={400}
-                                            height={300}
-                                            className='h-[300px] w-[400px] object-cover rounded-lg' />
-                                    )
-                                })}
-                        </div>) : (
-                            <div className='grid gap-4 my-12 h-[400px] overflow-y-scroll hide-scrollbar'>
-                                <p className='flex items-center justify-center'>No Images Available for {selected}</p>
-                            </div>
-                        )}
-
             </div>
         </section>
     )

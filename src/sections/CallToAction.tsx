@@ -19,9 +19,12 @@ export const CallToAction = () => {
     <section id='updates' ref={updateRef} className="scroll-mt-32 bg-gradient-to-b from-white to-[#d2dcff] py-24 overflow-x-clip">
       <div className="container">
         <div className="section-heading relative">
-          <h2 className="section-title">Contact Favvy's Apparrel today</h2>
+          <h2 className="section-title">Connect with me:</h2>
           <p className="section-description mt-5">
-            Experience effortless inventory management, track your sales like a pro, and gain valuable insights into your fashion business.
+
+            If you’re looking to connect,  collaborate, get something online from a Trusted Vendor,
+            or explore what I do, feel free to reach out to me on my Social Handles:
+
           </p>
           <motion.img
             src={starImage}

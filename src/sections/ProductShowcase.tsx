@@ -26,15 +26,22 @@ export const ProductShowcase = () => {
           <div className="flex justify-center">
             <div className="tag">Boost your productivity</div>
           </div>
-          <h2 className="section-title mt-5">About Us</h2>
+          <h2 className="section-title mt-5">About Victor Osim (Victorific Osim)</h2>
         </div>
         <div className="relative">
           <p className="text-[22px] leading-[30px] tracking-tight text-[#010D3E] mt-5">
-            At Favvy's, we specialize in curating high-quality, trendy, and timeless clothing that caters to every
-            personality and occasion. Our mission is to help you feel your best,
-            whether you're dressing up for a special event or embracing everyday comfort with a touch of elegance.
+            I’m a Business Idea Broker, Creator, Sales Man, Public Speaker, a Trusted connector,
+            and the founder of TrustPlug and IdeaBridge. More than just a name, I’m someone people
+            rely on to bridge the gap between opportunity and trust in the digital world and businesses.
+            Oh yes, and Life in general as well.
           </p>
-          <div className="mt-4">
+          <p className="text-[22px] leading-[30px] tracking-tight text-[#010D3E] mt-5">
+            My journey began with a simple insight: People love and trust me. This trust wasn’t
+            just a personal trait — it became a powerful currency. I realized I could leverage
+            that trust to connect everyday people with credible online businesses and vendors,
+            creating real value and genuine relationships.
+          </p>
+          {/* <div className="mt-4">
             {videoUrl ? (
               <video controls width="100%" className="h-[500px] w-full rounded-lg shadow-md">
                 <source src={videoUrl} type="video/mp4" />
@@ -43,7 +50,7 @@ export const ProductShowcase = () => {
             ) : (
               <p>Loading video...</p>
             )}
-          </div>
+          </div> */}
           <motion.img
             src={pyramidImage}
             alt='PyramidImage'
@@ -59,11 +66,17 @@ export const ProductShowcase = () => {
             src={tubeImage} alt='TubeImage' height={228}
             className="hidden md:block absolute bottom-24 -left-36" />
         </div>
+        <h2 className="section-title mt-5">My Businesses</h2>
         <p className="text-[22px] leading-[30px] tracking-tight text-[#010D3E] mt-5">
-          Led by Favvy, a passionate and experienced fashion enthusiast, Favvy's Apparels is all about delivering handpicked designs that reflect individuality and charm. From chic tees to luxurious shoes and accessories, we’ve got something for everyone.
+          This vision I stated above, led to the creation of TrustPlug
         </p>
         <p className="text-[22px] leading-[30px] tracking-tight text-[#010D3E] mt-5">
-          Discover the joy of effortless style with Favvy's Apparels — because you deserve to look as amazing as you feel!
+          a platform and business system that transforms trust into meaningful connections and growth in Life and Business, especially Partnership and Investments. This system is active and currently I have over 50 Trusted businesses/vendors throughout Nigeria, under TrustPlug. They are divided into Regions as follows:
+          - South South Region
+          - South East Region
+          - South West Region
+          - Northern Region
+          All online businesses are represented in this System. And we assure you of safe delivery of your products where ever you are in Nigeria, and what you order is what you get! I am the TrustPlug linking you to Trusted Businesses and Individuals. We offer businesses such as:
         </p>
       </div>
     </section>

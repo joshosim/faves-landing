@@ -1,6 +1,3 @@
-import React from 'react';
-// import CheckIcon from '../assets/check.svg'
-import { twMerge } from 'tailwind-merge';
 
 const blogPosts = [
   {
@@ -33,7 +30,10 @@ export const Blog = () => {
             Get insights about your everyday fashion. Look Good, Dress Nice.
           </p>
         </div>
-        <div className='flex flex-col gap-6 items-center mt-10 lg:flex-row lg:items-end lg:justify-center'>
+        <p className="section-description mt-5 ">
+          Coming Soon.
+        </p>
+        {/* <div className='flex flex-col gap-6 items-center mt-10 lg:flex-row lg:items-end lg:justify-center'>
           {blogPosts.map(({ title, url, desc, imageUrl, }) => (
             <div key={title} className={twMerge('card', 'border-black bg-black text-white/60')}>
               <img src={imageUrl} alt="" />
@@ -45,7 +45,7 @@ export const Blog = () => {
               </a>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section >
   );

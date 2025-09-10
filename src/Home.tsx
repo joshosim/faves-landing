@@ -17,7 +17,7 @@ export default function Home() {
 
             />
             <Hero />
-            <LogoTicker />
+            {/* <LogoTicker /> */}
             <ProductShowcase />
             <Products />
             <Blog />
