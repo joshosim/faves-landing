@@ -1,7 +1,4 @@
 import React from "react";
-// import ArrowRight from '../assets/arrow-right.svg'
-import starImage from '../assets/star.png'
-import springImage from '../assets/spring.png'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react';
 
@@ -26,28 +23,11 @@ export const CallToAction = () => {
             or explore what I do, feel free to reach out to me on my Social Handles:
 
           </p>
-          <motion.img
-            src={starImage}
-            style={{
-              translateY,
-            }}
-            alt='Star Image'
-            width={360}
-            className='absolute -left-[350px] -top-[137px]'
-          />
-          <motion.img
-            src={springImage}
-            style={{
-              translateY,
-            }}
-            alt='Spring Image'
-            width={360}
-            className='absolute -right-[331px] -top-[19px]'
-          />
+
         </div>
         <div className="flex gap-2 mt-10 justify-center">
           <button className="btn btn-primary cursor-default">Get in Touch</button>
-          <a href="https://wa.me/2348056221078">
+          <a href="https://wa.me/2349073054021">
             <button className="btn btn-text gap-1">
               <span>Contact Us</span>
               <svg

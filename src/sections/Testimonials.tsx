@@ -156,7 +156,7 @@ export const Testimonials = () => {
 
   const customerRef = useRef<HTMLDivElement>(null)
   return (
-    <section id='customers' ref={customerRef} className="bg-white scroll-mt-32">
+    <section id='customers' ref={customerRef} className="bg-white mt-20 scroll-mt-32">
       <div className="container">
         <div className="section-heading">
           <div className="flex justify-center">

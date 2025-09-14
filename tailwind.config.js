@@ -10,6 +10,9 @@ module.exports = {
       lg: '1200px',
     },
     extend: {
+      fontFamily: {
+        sora: ["Sora", "sans-serif"],
+      },
       container: {
         center: true,
         padding: {

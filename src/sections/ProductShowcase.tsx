@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
-import productImage from '../assets/product-image.png'
-import pyramidImage from '../assets/pyramid.png'
-import tubeImage from '../assets/tube.png'
+
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from "react";
 import { supabase } from "../supabase";
 
 export const ProductShowcase = () => {
-
-  const videoUrl = 'https://dmutnajqksyhxocmxsuq.supabase.co/storage/v1/object/public/video/VID-20250117-WA0077.mp4?t=2025-01-20T13%3A42%3A58.092Z'
 
   const aboutRef = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -41,30 +36,6 @@ export const ProductShowcase = () => {
             that trust to connect everyday people with credible online businesses and vendors,
             creating real value and genuine relationships.
           </p>
-          {/* <div className="mt-4">
-            {videoUrl ? (
-              <video controls width="100%" className="h-[500px] w-full rounded-lg shadow-md">
-                <source src={videoUrl} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            ) : (
-              <p>Loading video...</p>
-            )}
-          </div> */}
-          <motion.img
-            src={pyramidImage}
-            alt='PyramidImage'
-            height={262} width={262}
-            style={{
-              translateY,
-            }}
-            className="hidden md:block absolute -right-36 -top-32" />
-          <motion.img
-            style={{
-              translateY,
-            }}
-            src={tubeImage} alt='TubeImage' height={228}
-            className="hidden md:block absolute bottom-24 -left-36" />
         </div>
         <h2 className="section-title mt-5">My Businesses</h2>
         <p className="text-[22px] leading-[30px] tracking-tight text-[#010D3E] mt-5">

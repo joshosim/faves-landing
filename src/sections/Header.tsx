@@ -1,6 +1,7 @@
-import Logo from '../assets/logosaas.png'
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-scroll'
+import trust from '../assets/trustplug.jpg'
+import idea from '../assets/ideabridge.jpg'
 
 export const Header = () => {
 
@@ -30,11 +31,10 @@ export const Header = () => {
     <header className={`sticky top-0 ${isOpen ? '' : 'backdrop-blur-sm'} z-20 overflow-x-hidden`}>
       <div className="flex justify-center items-center py-3 gap-3 bg-black text-white text-sm">
         <p className='text-white/60 hidden md:block'>
-          Find your perfect outfit faster. Shop now and simplify your wardrobe
+          Where trust meets opportunity, and ideas become reality
         </p>
         <div className='inline-flex gap-1 items-center'>
           <p>Get in Touch</p>
-          {/* <ArrowRight className='h-4 w-4 inline-flex justify-center items-center' /> */}
           <svg
             className='h-4 w-4 inline-flex justify-center items-center'
             width="100%" height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@ export const Header = () => {
       <div className='py-5'>
         <div className='container'>
           <div className='flex items-center justify-between'>
-            <img src={Logo} alt='Saas Logo' height={40} width={40} />
+            <img src={trust} alt='Saas Logo' className="rounded-lg" height={40} width={40} />
 
             {/* MenuIcon Start */}
             <svg className='h-5 w-5 md:hidden cursor-pointer'
